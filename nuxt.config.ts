@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
   ],
   app: {
+    baseURL: '/dice-game/',
     pageTransition: { name: 'page', mode: 'out-in' }
   }
 })
