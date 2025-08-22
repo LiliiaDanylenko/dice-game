@@ -5,10 +5,15 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
   ],
+  ssr: false,
   app: {
+    baseURL: '/dice-game/',
+    buildAssetsDir: '/_nuxt/',
     pageTransition: { name: 'page', mode: 'out-in' }
   },
-  routeRules: {
-    '/': { redirect: '/game' },
-  },
+  nitro: {
+    prerender: {
+      routes: ['/']
+    }
+  }
 })
