@@ -10,10 +10,5 @@ export default defineNuxtConfig({
     baseURL: '/dice-game/',
     buildAssetsDir: '/_nuxt/',
     pageTransition: { name: 'page', mode: 'out-in' }
-  },
-  nitro: {
-    prerender: {
-      routes: ['/']
-    }
   }
 })
