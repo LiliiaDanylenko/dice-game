@@ -3,10 +3,10 @@
         <div class="game">
             <Dice />
             <div class="game-page">
-                <nav class="nav" :class="{ 'active': $route.path !== '/game' }">
+                <nav class="nav" :class="{ 'active': $route.path.includes('/game/chart') || $route.path.includes('/game/result') }">
                     <NuxtLink v-for="link in navLinks" :key="link.path" :to="link.path" class="nav-link" :class="{ 'active': $route.path === link.path }">{{ link.name }}</NuxtLink>
                 </nav>
-                <div :class="$route.path !== '/game' ? 'content' : ''">
+                <div :class="$route.path.includes('/game/chart') || $route.path.includes('/game/result') ? 'content' : ''">
                     <slot />
                 </div>
             </div>
